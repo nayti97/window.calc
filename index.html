@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+	<title>Калькулятор</title>
+	<script src="assets/js/js.js">
+	</script>
+</head>
+<body>
+	<h1>КАЛЬКУЛЯТОР ПЛАСТИКОВЫХ ОКОН И БАЛКОНОВ</h1>
+	<div class="content">
+
+		<div class="menu_window">
+
+			<h3>Тип окна</h3>
+			<br>
+			<div class="type_window">
+				<img src="assets/img/type1.png" class="calc_img_select" width="100" height="70" id="type1" onclick="newType(this.id)" />
+				<img src="assets/img/type2.png" class="calc_img_no_select" width="100" height="70" id="type2" onclick="newType(this.id)"/>
+				<img src="assets/img/type3.png" class="calc_img_no_select" width="100" height="70" id="type3" onclick="newType(this.id)"/>
+			</div>
+			<br>
+			<br>
+			<h3>Дополнительные услуги</h3>
+			<br>
+			<div class="add_services">
+
+				<div class="control-group">
+				    <label class="control control-checkbox">
+				        Комплектующие(подоконник, отлив)
+				            <input type="checkbox" checked="checked" id="addCom" onclick="sum()"/>
+				        <div class="control_indicator"></div>
+				    </label>
+				    <label class="control control-checkbox">
+				        Монтаж окон
+				            <input type="checkbox" id="addMon" onclick="sum()"/>
+				        <div class="control_indicator"></div>
+				    </label>
+				    <label class="control control-checkbox">
+				        Откосы
+				            <input type="checkbox" id="addOtkos" onclick="sum()"/>
+				        <div class="control_indicator"></div>
+				    </label>
+				</div>
+
+			</div>
+			<div class="price">
+				<span class="sale_info">Итоговая цена со скидкой 44%</span>
+				<br>
+				<span class="price_info" id="price">16 753</span><span class="rub_i"><i class="fa fa-rub"></i></span>
+			</div>
+
+		</div>
+
+		<div class="calc_menu">
+			<div class="calc_main">
+
+				<div class="calc_left_panel">
+					<div class="calc_text">
+						<div class="calc_top_text">
+							Высота, см
+						</div>
+						<input class="calc_info" id="calc_left_text" value="130" onchange="changRangLeft(this.value)" onkeyup="delchar(this)">
+					</div>
+					<div class="calc_range_left">
+						<input type="range" id="calc_vertical_line" class="calc_vertical_line" min="40" max="280" oninput="heightWin(this.value)" value="130" step="5">
+					</div>
+				</div>
+
+				<div class="calc_img">
+					<img id="img_wind" src="assets/img/type1.png" width="300" height="250">
+				</div>
+
+				<div class="calc_bot_panel">
+					<div class="calc_range_bot">
+						<input type="range" id="calc_horizontal_line" class="calc_horizontal_line"   min="40" max="280" oninput="widthWin(this.value)" value="140" step="5">
+					</div>
+					<div class="calc_text">
+						<div class="calc_top_text">
+							Ширина, см
+						</div>
+						<input class="calc_info" id="calc_bot_text" value="140" onchange="changRangBot(this.value)">
+					</div>
+				</div>
+
+			</div>
+
+			<div class="info_submit">
+				<div class="info_send">Обращаем ваше внимание, что расчет является предварительным и ознакомительным.</div>
+				<br>
+				<input type="button" class="send_button" value="Отправить заявку">
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
